@@ -32,6 +32,7 @@
     <script>
         // Set your desired password here
         const CORRECT_CODE = "awesomecode";
+        const OG_CODE = "the secret code";
 
         function checkCode() {
             // Get user input
@@ -43,8 +44,11 @@
                 // Redirect to home.html
                 window.location.href = "home.html";
             } else {
-                // Display error message
-                errorMsg.style.display = "block";
+                if (userInput === OG_CODE {
+                    window.location.href = "ogsecretpage.html":
+                    else {
+                        errorMsg.style.display = "block";
+                }
             }
         }
     </script>
