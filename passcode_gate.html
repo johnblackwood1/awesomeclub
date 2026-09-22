@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passcode Gate</title>
+</head>
+<body>
+
+    <!-- The login gate container -->
+    <div id="gate">
+        <h1>Access Required</h1>
+        <p>Please enter the secret code to view the content:</p>
+        
+        <!-- Input box for passcode -->
+        <input type="password" id="passcode-input" placeholder="Enter code here">
+        
+        <!-- Submit button -->
+        <button id="submit-btn" onclick="checkCode()">Submit</button>
+        
+        <!-- Error message display -->
+        <p id="error-msg" style="color: red; display: none;">Incorrect passcode. Try again.</p>
+    </div>
+
+    <!-- The secret content hidden by default -->
+    <div id="secret-content" style="display: none;">
+        <h1>Welcome!</h1>
+        <p>You have successfully entered the correct passcode.</p>
+        <p>This is the hidden website content!</p>
+    </div>
+
+    <script>
+        // Set your desired password here
+        const CORRECT_CODE = "awesomecode";
+
+        function checkCode() {
+            // Get user input
+            const userInput = document.getElementById("passcode-input").value;
+            const errorMsg = document.getElementById("error-msg");
+
+            // Verify passcode
+            if (userInput === CORRECT_CODE) {
+                // Redirect to home.html
+                window.location.href = "home.html";
+            } else {
+                // Display error message
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
